@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="num1" type="number" name="name1" placeholder="enter 1st Number">
+    <input id="num2" type="number"  placeholder="enter 2nd Number">
+    <button onclick="addition()">Add</button>
+    <button onclick="sub()">sub</button>
+    <button onclick="mul()">mul</button>
+    <button onclick="div()">div</button>
+    
+</body>
+</html>
+<script>
+function addition() {
+    let x=document.getElementById("num1").value
+     let y=document.getElementById("num2").value
+    alert(+x + +y)
+}
+function sub(){
+    let m =document.getElementById("num1").value
+     let n =document.getElementById("num2").value
+     alert(m-n)
+}
+function mul(){
+    let o=document.getElementById("num1").value
+     let p=document.getElementById("num2").value
+     alert(o*p)
+}
+function div(){
+    let q=document.getElementById("num1").value
+     let r=document.getElementById("num2").value
+     alert(q/r)
+}
+
+</script>

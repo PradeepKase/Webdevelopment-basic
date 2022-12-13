@@ -1,0 +1,10 @@
+form>input{
+    margin:10px;
+    background-color: rgb(198, 252, 234);
+    color: black;
+    border-radius: 5px;
+}
+form>select{
+    margin-left: 12px;
+    background-color:rgb(198, 252, 234);
+}

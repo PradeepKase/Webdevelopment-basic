@@ -1,0 +1,38 @@
+/* Fill CSS here */
+form{
+    /* background-color: teal; */
+    width:180px;
+    display: block;
+}
+form>input{
+    background-color: aqua;
+    
+}
+select{
+    background-color: aqua;
+}
+table{
+    margin-left: 300px;
+    margin-top: -295px;
+    display: block;
+    width: 831px;
+}
+form>input:last-child{
+    border-radius: 19px;
+    width: 289px;
+    margin-top: 10px;
+    color: rgb(0, 126, 245);
+    
+}
+#buton{
+    background-color:rgb(9, 122, 252) ;
+    color: black;
+}
+
+table>thead>tr>th{
+    width: 30px;
+    background-color: aquamarine;
+}
+table>tbody>tr>td{
+margin-top: 10px;
+}

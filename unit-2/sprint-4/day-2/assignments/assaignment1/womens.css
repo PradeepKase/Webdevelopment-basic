@@ -1,0 +1,11 @@
+#container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(9, 300px);
+    gap:10px;
+    margin: auto;
+}
+#container>div>p{
+    font-size: 12px;
+    margin: 2px;
+}

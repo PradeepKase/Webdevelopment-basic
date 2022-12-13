@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age_check</title>
+</head>
+<body>
+    <h1>Your age?</h1>
+    <input id="age_check"type="number" placeholder="type your age">
+    <button onclick="ageCheck()"> age check</button>
+    <p id="result"> can you drive in india?</p>
+</body>
+</html>
+<script>
+    function ageCheck(){
+       let userage= document.getElementById("age_check").value;
+       if (userage>18){
+            document.getElementById("result").innerText="You can drive in india"
+       }
+       else if(userage<18){
+            document.getElementById("result").innerText="You can't drive in India"
+       }
+       else if(userage==18){
+            document.getElementById("result").innerText="You are just old enough to drive in India!"
+       }
+    }
+</script>

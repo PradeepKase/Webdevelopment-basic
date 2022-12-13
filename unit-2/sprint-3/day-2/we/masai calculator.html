@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            color: teal;
+        }
+    #container{
+        width: 25%;
+        height: 400px;
+        /* border: 1px solid black; */
+        margin: auto;
+        box-shadow: 3px 3px 3px 3px gray;
+        }
+
+    #display{
+        width:85%;
+        height:10%;
+        /* border: 1px solid red; */
+        margin-top: 20px;
+        margin: auto;
+        margin-top: 20PX;
+        box-shadow: 3px 3px 3px 3px gray;
+        border-radius: 8px;
+        font-size: 30px;
+        display: flex;
+        justify-content:right;
+        align-items: center;
+        overflow: hidden;
+    }
+    #keypad{
+        width: 85%;
+    height: 290px;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 70px);
+    gap: 5px;
+}
+#keypad>div{
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px 3px gray;
+}
+#keypad>div>h4{
+    text-align: center;
+}
+#keypad>div:nth-child(4)
+    {
+    background-color: black;
+    color: white;
+    
+}
+#keypad>div:nth-child(8)
+    {
+    background-color: black;
+    color: white;
+}
+#keypad>div:nth-child(12)
+    {
+    background-color: black;
+    color: white;
+}
+#keypad>div:nth-child(15)
+    {
+    background-color: black;
+    color: white;
+}
+#keypad>div:nth-child(16)
+    {
+    background-color: black;
+    color: white;
+}
+#keypad>div:nth-child(13)
+    {
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+#keypad>div:hover {
+    background-color: blueviolet;
+}
+
+        </style>
+</head>
+<body><h1>Masai Calculator</h1>
+    <div id="container">
+        <div id="display"></div>
+        <div id="keypad">
+            <div><h4>1</h4></div>
+            <div><h4>2</h4></div>
+            <div><h4>3</h4></div>
+            <div><h4>+</h4></div>
+            <div><h4>4</h4></div>
+            <div><h4>5</h4></div>
+            <div><h4>6</h4></div>
+            <div><h4>-</h4></div>
+            <div><h4>7</h4></div>
+            <div><h4>8</h4></div>
+            <div><h4>9</h4></div>
+            <div><h4>*</h4></div>
+            <div><h4>C</h4></div>
+            <div><h4>0</h4></div>
+            <div><h4>=</h4></div>
+            <div><h4>/</h4></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let key=document.querySelectorAll("#keypad>div")
+    let jhola="";
+    for(let i=0; i<key.length; i++){
+        key[i].addEventListener("click", mycalculator)
+    }
+    function mycalculator(event){
+        let targetNumber=event.target.innerText
+            if(targetNumber=="C"){
+                jhola=""
+            document.querySelector("#display").innerText=""       
+            }
+            else if(targetNumber=="="){
+            document.querySelector("#display").innerText=eval(jhola)    
+            }
+            else{jhola=jhola+targetNumber
+        document.querySelector("#display").innerText=jhola
+    }
+
+        
+    }
+</script>

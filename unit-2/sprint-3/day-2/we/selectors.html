@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>First H1</h1>
+    <h1>Second H1</h1>
+    <h3>First H3</h3>
+    <h3>Second H3</h3>
+    <h5>First H5</h5>
+    <h5>Second H5</h5>
+    <h5>Third H5</h5>
+    <div class="green">First DIV</div>
+    <div class="red">Second DIV</div>
+    <div class="blue">Third DIV</div>
+    <p class="green">First P</p>
+    <p class="red">Second P</p>
+    <p class="blue">Third P</p>
+    <hr/>
+    <button id="btn">Change H1</button>
+    <button id="btn2">Change H3</button>
+    <button id="btn3">Change H5</button>
+    <button id="btn4">Change Green</button>
+    <button id="btn5">Change Red</button>
+    <button id="btn6">Change Blue</button>
+    
+</body>
+</html>
+<script>
+document.getElementById("btn").addEventListener("click",changetored)
+                
+ function changetored(){
+document.querySelector("h1").style.color="red";
+ }
+
+ 
+ document.querySelector("#btn2").addEventListener("click",changetogreen)                
+ function changetogreen(){
+     var a= document.querySelectorAll("h3")
+     for(let i=0; i<a.length; i++){
+         a[i].style.color="green"
+     }
+    }
+
+
+document.querySelector("#btn3").addEventListener("click",changetoblue)
+function changetoblue(){
+var b= document.querySelectorAll("h5")
+    for(let i=0; i<b.length; i++){
+        b[i].style.color="blue"
+    }
+}
+
+
+document.querySelector("#btn4").addEventListener("click",changegreen)
+function changegreen(){
+   let c= document.querySelectorAll(".green")
+   for(let i=0; i<c.length; i++){
+    c[i].style.color="green"
+   }
+}
+
+
+document.querySelector("#btn6").addEventListener("click", changeblue)
+function changeblue(){
+    let d= document.querySelectorAll(".blue")
+    for(let i=0; i<d.length; i++){
+        d[i].style.color="blue"
+    }
+}
+
+
+document.querySelector("#btn5").addEventListener("click",changered)
+function changered(){
+let e=document.querySelectorAll(".red")
+for(let i=0; i<e.length; i++){
+    e[i].style.color="red"
+}
+}
+</script>

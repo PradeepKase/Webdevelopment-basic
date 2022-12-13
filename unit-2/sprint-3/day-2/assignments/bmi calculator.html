@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>check your BMI</h1>
+    <h3>enter your wight and height to check your BMI</h3>
+    <h3>Put your weight in KG</h3>
+    <input id="weight" type="number" placeholder="enter here in kg">
+    <h3>And your height in CM</h3>
+    <input id="height" type="number" placeholder="enter here in cm">
+    <button id="btn">Calculate BMI</button>
+    <h2 id="result">your bmi is</h2>
+</body>
+</html>
+<script>
+     document.getElementById("btn").addEventListener("click",checkbmi)
+     function checkbmi(){
+        let x= document.getElementById("weight").value 
+     let y= document.getElementById("height").value
+     let z=(x/(y*y))*1000
+    //  document.getElementById("result").innerText="your BMI is "+z +" which means you are"
+        if(z<=18.4){
+           
+           document.getElementById("result").innerText="your BMI is "+z +" which means you are Under weight"
+        }
+        else if(z>=18.5 && z<=24.9){
+            
+            document.getElementById("result").innerText="your BMI is "+z +" which means you are Normal weight"
+        }
+        else if(z>=25 && z<=29.9){
+            document.getElementById("result").innerText="your BMI is "+z +" which means you are Over weight"
+        }
+        else if(z>=30){
+            document.getElementById("result").innerText="your BMI is "+z +" which means you are Obses"
+        }
+
+     }
+     
+     
+
+</script>

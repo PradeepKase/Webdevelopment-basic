@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart page</title>
+    <style>
+        #products{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-template-rows: repeat(6, 600px);
+      gap:10px;
+      margin: auto;
+  }
+  #products>div>p{
+      font-size: 12px;
+      margin: 5px;
+  }
+  img{
+    width:300px;
+    height:400px
+  }
+      </style>
+</head>
+<body>
+    <div id="products">
+        <!-- all products are append here -->
+      </div>
+</body>
+</html>
+<script>
+    document.getElementById("products")
+    let cartLS= JSON.parse(localStorage.getItem("cart-page"))||[]
+
+    function display(productData){
+  document.getElementById("products").innerHTML=""
+  
+  productData.forEach(function(element){
+
+    
+
+let product=document.createElement("div")
+
+
+let img=document.createElement("img")
+img.src=element.img
+
+let brand=document.createElement("h1")
+brand.innerText=element.brand
+
+let name=document.createElement("h2")
+name.innerText=element.name
+
+let pri=document.createElement("p")
+pri.innerText=element.price
+
+let catagory=document.createElement("p")
+catagory.innerText=element.catagory
+
+let buton=document.createElement("button")
+buton.innerText="Delet"
+buton.addEventListener("click",function(){
+    delet(element.productID)
+})
+
+product.append(img,brand,name,catagory,pri,buton)
+
+document.querySelector("#products").append(product)
+
+})
+
+}
+
+ display(cartLS);
+
+ function delet(id){
+    let deleted=cartLS.filter(function(el){
+        return el.productID!=id
+    })
+    console.log("inside")
+    cartLS=deleted
+    localStorage.setItem("cart-page",JSON.stringify(cartLS))
+    display(cartLS)
+ }
+
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, auto);
+            /* gap:20px; */
+            padding: 150px;
+            margin-top: -143px;
+            
+        }
+        #container>div>h2{
+            text-align: center;
+        }
+        #container>div{
+            display:grid;
+            justify-content: center;
+        }
+        /* h2+img{
+            margin-top: 2px;
+            width:10px;
+            height:60px; */
+        
+        #container>div>img:first-child{
+            height:180px;
+            width:180px;
+        }
+        #container>div>img:last-child{
+            height: 40px;
+        width: 109px;
+        /* margin-right: -8px; */
+        margin-top: -30px;
+        margin-left: 37px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    let mentors=[{image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amol_holani_104aa76aad.jpeg",name:"Amol Holani",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/citi_rect_0895008b53.svg"},
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/yash_shukla_f8d69a6bb2.jpg",name:"Yash Shukla",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/microsoft_rect_2fd5941d6b.svg"},
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/yuvraj_jaiswal_98e5f25045.jpg",name:"Yuvraj jeswal",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amazon_rect_9e0cd101b1.svg"},
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/mohit_rai_00ca5b01ee.jpg",name:"Mohit",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/flipkart_e9b84a5d5e.svg"},
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/jai_senthia_aabd0c8953.jpg",name:"jay",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amazon_rect_9e0cd101b1.svg"},
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/abhishek_telekune_c1ef211e4d.jpg",name:"Abhishek",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amazon_rect_9e0cd101b1.svg"},
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/harshit_hrc_0fc9e7880e.jpg",name:"Harshit",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paypal_ca7fa4b819.svg"},
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/atul_mishra_50fa223623.jpg",name:"Atul",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/zynga_rect_e25a350e07.svg"}]
+
+mentors.forEach(function(element){
+    // creating child boxes(div)
+    let box = document.createElement("div");
+    // creating image
+    let photo =document.createElement("img");
+    photo.setAttribute("src",element.image)
+    // appending image to box
+    box.append(photo)
+    // create h2
+    let mentorname= document.createElement("h2")
+    mentorname.innerText=element.name
+    // appending h2 to div
+     box.append(mentorname)
+    //  create logo
+    let log=document.createElement("img")
+    log.setAttribute("src",element.logo)
+    box.append(log)
+    // appending box to container
+    document.querySelector("#container").append(box)
+
+
+})
+    
+</script>
